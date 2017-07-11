@@ -1,0 +1,142 @@
+:host:parent:first-child .resultitem .resultterm {
+	border-radius: 4px 0 0 0;
+}
+
+.resultitem {
+	/*height: 125px;*/
+	flex-basis: max-content;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
+	transition: 0.2s linear all;
+}
+.resultitem.bigger {
+	height: 210px;
+}
+
+.resultdef {
+	flex: 5;
+	flex-basis: max-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.defsection {
+	flex: 10;
+	flex-basis: max-content;
+	padding: 10px 5px 5px 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.deftext {
+	flex: 10;
+	flex-basis: max-content;
+}
+
+.defbar {
+	flex: 3;
+	flex-basis: max-content;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	align-content: stretch;
+	flex-shrink: 0;
+}
+.defactionsbutton {
+	cursor: pointer;
+	font-size: 12px;
+	color: #505c63;
+}
+.defactionsbutton i {
+	padding: 0 4px 0 4px;
+	transition: 0.2s linear all;
+}
+.upsidedown {
+	transform: rotate(180deg);
+}
+.resultlabel {
+	font-size: 10px;
+	text-transform: uppercase;
+	text-align: right;
+	color: rgba(0, 0, 0, 0);
+	transition: color 0.2s linear;
+	user-select: none;
+	cursor: default;
+}
+.resultterm:hover .resultlabel {
+	color: rgba(0, 0, 0, 0.35);
+}
+.resultdef:hover .resultlabel {
+	color: rgba(0, 0, 0, 0.35);
+}
+
+.actionsection {
+	flex: 9;
+	background: rgba(81, 92, 99, 0.07);
+	padding: 10px;
+	flex-basis: max-content;
+}
+
+.loadingarticle:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: ellipsis steps(4,end) 1100ms infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+
+h2.voatitle {
+	font-size: 18px;
+}
+.voabody {
+	font-size: 12px;
+}
+.voabody b {
+	font-weight: bold;
+	background-color: #ec43ba;
+}
+
+.resultterm {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: stretch;
+	align-content: stretch;
+	color: #505c63;
+	background: rgba(202, 212, 219, 0.7);
+	padding: 5px;
+}
+
+.resultchin {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: stretch;
+}
+.char {
+	font-size: 28px;
+}
+.char, .pinyin {
+	padding: 0 0 0 5px;
+}

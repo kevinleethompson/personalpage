@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="header">
+    <div class="headertitlebox">
+      <div class="headertitle">
+        KEVIN <span id="pinklee">LEE</span> THOMPSON
+      </div>
+    </div>
+	<div class="empty">
+
+	</div>
+	<div class="personallinks">
+		<a href="http://www.github.com/kevinleethompson" target="_blank" (mouseenter)="toggleTip(true, 'www.github.com/kevinleethompson', true)" (mouseout)="toggleTip(false, '')"><i class="fa fa-github" aria-hidden="true"></i></a>
+		<div [ngClass]="{offsettip: offset}" [@fadeInOut] *ngIf="showTip" class="tooltip">
+			{{tipContent}}
+		</div>
+		<a href="mailto:kevleethompson@gmail.com" target="_top" (mouseenter)="toggleTip(true, 'kevleethompson@gmail.com', false)" (mouseout)="toggleTip(false, '')"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+	</div>
+  </div>
+  <div class="maincontent">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="sidebar">
+    <app-nav [nav]="mainNav"></app-nav>
+  </div>
+  <div class="footer">
+
+  </div>
+</div>

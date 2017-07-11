@@ -1,0 +1,8 @@
+<span class="navbutton" (click)="navClick($event, button)">
+  {{text}}
+</span>
+<span *ngIf="openSubNav" class="subnav" [@navEnterLeave]="openSubNav">
+  <span>
+    <app-navitem *ngFor="let sub of subNav" [text]="sub.text" [route]="sub.route" [subNav]="sub.subNav"></app-navitem>
+  </span>
+</span>

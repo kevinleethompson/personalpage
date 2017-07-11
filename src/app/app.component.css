@@ -1,0 +1,125 @@
+/* ----- PRIMARY TEMPLATE ELEMENTS ----- */
+input, button, submit {
+  border: none;
+}
+
+.header {
+  grid-area: header;
+  background: #94acba;
+  color: #fefefe;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-between;
+}
+.maincontent {
+  grid-area: main;
+  background: #fefefe;
+  padding: 5px;
+}
+.sidebar {
+  grid-area: sidebar;
+  background: #c9d4db;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.footer {
+  grid-area: footer;
+  background: repeating-linear-gradient(
+	45deg,
+	#c9d4db,
+	#c9d4db 2px,
+	#94acba 2px,
+	#94acba 4px
+  );
+  padding: 5px;
+}
+/* ----- PRIMARY TEMPLATE ELEMENTS ----- */
+
+
+
+/* ----- HEADER ELEMENTS ----- */
+.headertitlebox {
+  display: flex;
+  flex-basis: max-content;
+  /*width: 20%;*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  margin: -5px;
+  padding: 0 25px 0 25px;
+  background: repeating-linear-gradient(
+	135deg,
+	rgb(201, 212, 219),
+	#c9d4db 2px,
+	#94acba 2px,
+	#94acba 4px
+  );
+}
+.headertitle {
+  color: #fefefe;
+  background: #505c63;
+  font-size: 22px;
+  line-height: 0.83;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 0 10px 0 10px;
+  user-select: none;
+  cursor: default;
+}
+#pinklee {
+	color: #febfeb;
+}
+.empty {
+	flex:1;
+}
+.personallinks {
+	padding: 10px;
+	position: relative;
+}
+.personallinks i {
+	font-size: 20px;
+	padding: 5px;
+	transition: 0.3s ease-in-out all;
+}
+.personallinks i:hover {
+	cursor: pointer;
+	background-color: rgb(80, 92, 99);
+	color: rgb(254, 191, 235);
+	border-radius: 4px 4px 0 0;
+}
+.tooltip {
+	opacity: 1;
+	color: #fefefe;
+	background: #505c63;
+	border-radius: 10px 0 10px 0;
+	padding: 5px;
+	position: absolute;
+	right: 10px;
+}
+.offsettip {
+	right: 44px;
+}
+/* ----- HEADER ELEMENTS ----- */
+
+
+
+/* ----- NAVBAR ELEMENTS ----- */
+
+/* ----- NAVBAR ELEMENTS ----- */
+
+
+
+
+
+/* ----- NAVBAR ELEMENTS ----- */
+
+
+
+
+/* ----- NAVBAR ELEMENTS ----- */

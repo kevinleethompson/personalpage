@@ -1,0 +1,174 @@
+.cedictbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: center;
+}
+
+.searchfield {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+	padding: 5px;
+	margin: 5px;
+}
+.searchfield::placeholder {
+	font-family: 'Karla', "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.dictsearch {
+	flex: 2;
+	font-size: 16px;
+	padding-left: 10px;
+	border-radius: 4px 0 0 4px;
+	border: 0.5px solid #ec43ba;
+}
+.searchbutton {
+	text-transform: uppercase;
+	padding: 10px;
+	border-radius: 0 4px 4px 0;
+	color: #505c63;
+	background: #febfeb;
+	text-align: center;
+	vertical-align: center;
+	cursor: pointer;
+	transition: background 0.5s linear;
+}
+.searchbutton:hover {
+	background: rgba(254, 190, 235, 0.6);
+}
+
+.pagination {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: center;
+	padding: 5px;
+}
+.paginationtext {
+	color: #505c63;
+}
+.paginationbuttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: center;
+}
+.pagebutton {
+	flex: 1;
+	display: block;
+	width: auto;
+	min-width: 16px;
+	border: 0.5px solid #ec43ba;
+	border-radius: 4px;
+	color: rgba(236, 67, 186, 0.5);
+	font-weight: bold;
+	padding: 0 3px 0 3px;
+	margin: 1px;
+	text-align: center;
+	vertical-align: middle;
+	user-select: none;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+.pagebutton:hover {
+	background: #febfeb;
+	color: #fff;
+}
+.selectedpage, .selectedpage:hover {
+	background: #febfeb;
+	color: #505c63;
+	cursor: default;
+}
+.pageicons {
+	font-size: 20px;
+	margin: 0 4px 0 4px;
+	color: rgba(81, 92, 99, 0.6);
+}
+.pageicons:hover {
+	color: #ec43ba;
+	cursor: pointer;
+}
+
+.startmessage {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: flex-start;
+	align-self: center;
+	width: 235px;
+	height: 235px;
+	padding: 5px;
+	border: 2px solid #94acba;
+	border-radius: 50%;
+	background: #c9d4db;
+	margin: 20px;
+}
+.startmessage .bigchin {
+	font-size: 60px;
+	color: #eee;
+	padding: 8px;
+	background: #505c63;
+	font-weight: bold;
+	border-radius: 10px;
+}
+.startmessage .lileng {
+	font-size: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	color: #505c63;
+}
+.nonemessage {
+	padding: 5px;
+	margin: 5px;
+}
+
+
+.searchresults {
+	margin: 5px;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	align-content: stretch;
+	justify-content: flex-start;
+}
+
+.searchresults /deep/ .resultitem .resultdef {
+	border-bottom: 0.5px solid #94acba;
+	border-right: 0.5px solid #94acba;
+}
+.searchresults /deep/ .resultitem .resultterm {
+	border-bottom: 0.5px solid #94acba;
+}
+
+.searchresults .dictresult:first-of-type /deep/ .resultitem .resultterm {
+	border-radius: 4px 0 0 0;
+	border-bottom: 0.5px solid #94acba;
+}
+
+.searchresults .dictresult:last-of-type /deep/ .resultitem .resultterm {
+	border-radius: 0 0 0 4px;
+	border-bottom: none;
+}
+
+.searchresults .dictresult:first-of-type /deep/ .resultitem .resultdef {
+	border-radius: 0 4px 0 0;
+	border-top: 0.5px solid #94acba;
+	border-bottom: 0.5px solid #94acba;
+	border-right: 0.5px solid #94acba;
+}
+
+.searchresults .dictresult:last-of-type /deep/ .resultitem .resultdef {
+	border-radius: 0 0 4px 0;
+	border-bottom: 0.5px solid #94acba;
+	border-right: 0.5px solid #94acba;
+}

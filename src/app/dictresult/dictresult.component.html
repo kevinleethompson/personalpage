@@ -1,0 +1,56 @@
+<div class="resultitem">
+	<div class="resultterm">
+		<div class="resultchin">
+			<span class="char">
+				{{term.simp}}
+			</span>
+			<span class="resultlabel">
+				simplified
+			</span>
+		</div>
+		<div class="resultchin">
+			<span class="char">
+				{{term.trad}}
+			</span>
+			<span class="resultlabel">
+				traditional
+			</span>
+		</div>
+		<div class="resultchin">
+			<span class="pinyin">
+				{{term.pinyin}}
+			</span>
+			<span class="resultlabel">
+				pinyin
+			</span>
+		</div>
+	</div>
+	<div class="resultdef">
+		<div class="defsection">
+			<div class="deftext">
+				{{term.definition}}
+			</div>
+			<div class="defbar">
+				<span (click)="toggleActionSection()" class="defactionsbutton">
+					{{actionSection ? "LESS" : "MORE"}}<i [ngClass]="{'upsidedown': actionSection}" class="fa fa-caret-up" aria-hidden="true"></i>
+				</span>
+				<span class="resultlabel">
+					definition
+				</span>
+			</div>
+		</div>
+		<div [@flexGrowInOut] *ngIf="actionSection" class="actionsection">
+			<div *ngIf="!article" class="loadingarticle">
+				Loading VOA Chinese Article
+			</div>
+			<div *ngIf="article && article.body" class="voaarticle">
+				<h2 class="voatitle">{{article.title}} <a [href]="article.link" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h2>
+				<div class="voabody" [innerHTML]="article.body">
+				</div>
+			</div>
+			<div *ngIf="article && !article.body" class="noArticle">
+				Search for VOA Chinese articles containing this term returned 0 results.
+			</div>
+		</div>
+	</div>
+</div>

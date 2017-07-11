@@ -1,0 +1,34 @@
+.introbox {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.introtext {
+	padding: 10px;
+	text-indent: 20px;
+}
+
+.kevinpic {
+	width: 207px;
+	height: 250px;
+	margin: 0;
+	padding: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image:
+	url(../../assets/Kevin_caricature_color.png);
+}
+
+.familypic {
+	width: 250px;
+	height: 250px;
+	margin: 0;
+	padding: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image:
+	url(../../assets/family_caricature_color.png);
+}

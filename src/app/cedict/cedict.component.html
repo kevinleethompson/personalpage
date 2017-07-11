@@ -1,0 +1,56 @@
+<div class="cedictbox">
+	<div class="searchfield">
+		<input class="dictsearch" [(ngModel)]="searchText" (keyup.enter)="searchDict(searchText, searchResults.pagination)" type="text" placeholder="Type something like '熊猫', 'qi4 qiu2', or 'apple pie'..." />
+		<span class="searchbutton" (click)="searchDict(searchText, searchResults.pagination)">search</span>
+	</div>
+	<div class="startmessage" *ngIf="!searchResults.results">
+		<span class="bigchin">汉英<br>词典</span>
+		<span class="lileng">Chinese-English<br>Dictionary</span>
+	</div>
+	<div class="nonemessage" *ngIf="searchResults.pagination.totalResults == 0">
+		<span>Sorry, <b>'{{searchResults.pagination.searchStr}}'</b> did not match any records in the dictionary.</span>
+	</div>
+	<div class="searchresults" *ngIf="searchResults.results && searchResults.pagination.totalResults > 0">
+		<div class="pagination" *ngIf="searchResults.results && searchResults.pagination.totalResults > 0">
+			<span class="paginationtext">
+				{{((searchResults.pagination.page - 1) * searchResults.pagination.pageSize) + 1}} - {{searchResults.pagination.page == searchResults.pagination.numPages ? searchResults.pagination.totalResults : (searchResults.pagination.pageSize * searchResults.pagination.page)}} of {{searchResults.pagination.totalResults}} results
+			</span>
+			<span class="paginationbuttons">
+				<i (click)="goToPage(1)" *ngIf="searchResults.pagination.page > 4" class="fa fa-angle-double-left pageicons" aria-hidden="true"></i>
+				<i (click)="goToPage(searchResults.pagination.page - 1)" *ngIf="searchResults.pagination.page > 4" class="fa fa-angle-left pageicons" aria-hidden="true"></i>
+				<span (click)="page != searchResults.pagination.page && goToPage(page)" [ngClass]="{'selectedpage': page == searchResults.pagination.page}" *ngFor="let page of calcPages(searchResults.pagination.page, searchResults.pagination.numPages)" class="pagebutton">
+					{{page}}
+				</span>
+				<i (click)="goToPage(Number(searchResults.pagination.page) + 1)" *ngIf="searchResults.pagination.page < searchResults.pagination.numPages - 6" class="fa fa-angle-right pageicons" aria-hidden="true"></i>
+				<i (click)="goToPage(searchResults.pagination.numPages)" *ngIf="searchResults.pagination.page < searchResults.pagination.numPages - 6" class="fa fa-angle-double-right pageicons" aria-hidden="true"></i>
+			</span>
+		</div>
+		<app-dictresult [@flyInOut]="whichWay" class="dictresult" *ngFor="let result of searchResults.results" [term]="result"></app-dictresult>
+		<!-- <app-dictresult [@slideEnterLeave] class="dictresult" [term]="{
+			simp: '人',
+			trad: '人',
+			pinyin: 'ren2',
+			definition: 'person'
+		}"></app-dictresult>
+		<app-dictresult [@slideEnterLeave] class="dictresult" [term]="{
+			simp: '人',
+			trad: '人',
+			pinyin: 'ren2',
+			definition: 'person'
+		}"></app-dictresult> -->
+		<div class="pagination" *ngIf="searchResults.results.length > 0">
+			<span class="paginationtext">
+				{{((searchResults.pagination.page - 1) * searchResults.pagination.pageSize) + 1}} - {{searchResults.pagination.page == searchResults.pagination.numPages ? searchResults.pagination.totalResults : (searchResults.pagination.pageSize * searchResults.pagination.page)}} of {{searchResults.pagination.totalResults}} results
+			</span>
+			<span class="paginationbuttons">
+				<i (click)="goToPage(1)" *ngIf="searchResults.pagination.page > 4" class="fa fa-angle-double-left pageicons" aria-hidden="true"></i>
+				<i (click)="goToPage(searchResults.pagination.page - 1)" *ngIf="searchResults.pagination.page > 4" class="fa fa-angle-left pageicons" aria-hidden="true"></i>
+				<span (click)="page != searchResults.pagination.page && goToPage(page)" [ngClass]="{'selectedpage': page == searchResults.pagination.page}" *ngFor="let page of calcPages(searchResults.pagination.page, searchResults.pagination.numPages)" class="pagebutton">
+					{{page}}
+				</span>
+				<i (click)="goToPage(Number(searchResults.pagination.page) + 1)" *ngIf="searchResults.pagination.page < searchResults.pagination.numPages - 6" class="fa fa-angle-right pageicons" aria-hidden="true"></i>
+				<i (click)="goToPage(searchResults.pagination.numPages)" *ngIf="searchResults.pagination.page < searchResults.pagination.numPages - 6" class="fa fa-angle-double-right pageicons" aria-hidden="true"></i>
+			</span>
+		</div>
+	</div>
+</div>
